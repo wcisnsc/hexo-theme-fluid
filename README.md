@@ -33,9 +33,11 @@
 
 如果你还没有 Hexo 博客，请按照 [Hexo 官方文档](https://hexo.io/zh-cn/docs/) 进行安装、建站。
 
-#### 2. 获取主题版本
+#### 2. 获取主题
 
-下载 [最新 release 版本](https://github.com/fluid-dev/hexo-theme-fluid/releases) 解压到 themes 目录，并将解压出的文件夹重命名为 `fluid`。
+```bash
+git clone --depth=1 https://github.com/wcisnsc/hexo-theme-fluid.git themes/fluid
+```
 
 #### 3. 指定主题
 
@@ -46,6 +48,8 @@ theme: fluid  # 指定主题
 
 language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改
 ```
+
+在博客根目录创建 `_config.fluid.yml`，把主题目录的 `_config.yml` 内容复制进去
 
 #### 4. 创建「关于页」
 
