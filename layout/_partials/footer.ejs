@@ -1,0 +1,50 @@
+<div class="footer-inner">
+  <% if (theme.footer.content) { %>
+    <div class="footer-content">
+      <%- theme.footer.content %>
+    </div>
+  <% } %>
+  <% if (theme.footer.content2) { %>
+    <div class="footer-content" style="font-size: 0.85rem;">
+      <%- theme.footer.content2 %>
+    </div>
+  <% } %>
+  <% if (theme.footer.statistics.enable) { %>
+    <%- partial('_partials/footer/statistics.ejs') %>
+  <% } %>
+  <% if(theme.footer.beian.enable) { %>
+    <!-- 备案信息 ICP for China -->
+    <%- partial('_partials/footer/beian.ejs') %>
+  <% } %>
+  <div>
+  <span id="timeDate">正在载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("1/12/2025 01:15:00");
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "🚀本网站已飞行&nbsp"+dnum+"&nbsp天";  
+      document.getElementById("times").innerHTML = hnum + "&nbsp时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  </script>
+  </div>
+</div>

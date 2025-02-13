@@ -1,0 +1,10 @@
+.tocbot-active-link {
+    font-weight: bold;
+    /*color var(--link-hover-color)*/
+    color: #158956;
+    background: #00c4b520;
+    border-radius: 5px;
+}
+.toc-list-item::before {
+    background: #158956;
+}
